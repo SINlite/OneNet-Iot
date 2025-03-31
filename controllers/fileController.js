@@ -37,4 +37,39 @@ module.exports = {
       });
     }
   }
+  /**
+   * 下载设备文件
+   */
+  downloadFile: async(req,res)=> {
+    try {
+      const { fid } = req.query;
+      if (!fid) {
+        return res.status(400).json({ 
+          success: false,
+          error: '缺少必要参数: fid' 
+        });
+      }
+
+    const fileStream = await fileService.downloadDeviceFile(fid);
+    
+    // 设置响应头
+    res.set({
+      'Content-Type': 'application/octet-stream',
+      'Content-Disposition': `attachment; filename=${fid}.bin` // 可根据实际需求调整文件名
+    });
+
+    // 管道传输流
+    fileStream.pipe(res);
+    
+  } catch (error) {
+    logger.error('文件下载控制器错误', {
+      params: req.query,
+      error: error.stack
+    });
+    
+    res.status(500).json({
+      success: false,
+      error: '文件下载失败: ' + error.message
+    });
+  }
 };

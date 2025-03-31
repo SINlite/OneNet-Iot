@@ -32,4 +32,33 @@ module.exports = {
       count: response.data.data.files_total
     };
   }
+  /**
+   * 下载设备文件
+   * @param {string} fileId - 文件ID
+   * @returns {Promise<Stream>} 文件流
+   */
+  async function downloadDeviceFile(fileId) {
+    if (!fileId) throw new Error('文件ID不能为空');
+  
+    try {
+      const response = await axios.get('https://iot-api.heclouds.com/device/file-download', {
+        params: { fid: fileId },
+        headers: { Authorization: generateAuthorization() },
+        responseType: 'stream' // 关键：指定返回流格式
+      });
+  
+      if (response.status !== 200) {
+        throw new Error(`下载失败，状态码: ${response.status}`);
+      }
+  
+      return response.data;
+    } catch (error) {
+      logger.error('文件下载失败', {
+        fileId,
+        error: error.message
+      });
+      throw error;
+    }
+  }
 };
+

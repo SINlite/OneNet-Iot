@@ -11,6 +11,7 @@ router.get('/devices', deviceController.getDeviceList);
 // 文件相关路由
 router.get('/files/space', fileController.getAccountFileSpace);
 router.get('/files/count', fileController.getDeviceFileCount);
+router.get('/files/download', fileController.downloadFile);
 
 // 健康检查
 router.get('/health', (req, res) => {
