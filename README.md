@@ -38,14 +38,15 @@
 
 ### 2. API端点
 ```http
-GET    /api/devices           # 获取设备列表
+GET    /api/devices            # 获取设备列表
 GET    /api/devices/properties # 查询设备当前属性
 GET    /api/devices/history    # 查询属性历史记录
 GET    /api/files/space        # 获取存储空间信息
 GET    /api/files/count        # 查询设备文件数量
-GET    /api/health            # 服务健康检查
-GET    /api/files/download    #文件下载
-POST    /api/files/delete    #文件删除
+GET    /api/health             # 服务健康检查
+GET    /api/files              # 文件列表
+GET    /api/files/download     # 文件下载
+POST    /api/files/delete      # 文件删除
 ```
 
 ### 3. 配置示例 (`config/constants.js`)
