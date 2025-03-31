@@ -45,6 +45,7 @@ GET    /api/files/space        # 获取存储空间信息
 GET    /api/files/count        # 查询设备文件数量
 GET    /api/health            # 服务健康检查
 GET    /api/files/download    #文件下载
+POST    /api/files/delete    #文件删除
 ```
 
 ### 3. 配置示例 (`config/constants.js`)
