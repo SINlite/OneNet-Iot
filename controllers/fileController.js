@@ -108,6 +108,37 @@ module.exports = {
         requestId: error.response?.data?.request_id
       });
     }
-  }
+  },
+  getFileList : async (req, res) => {
+    try {
+      const { limit = 10, offset = 0 } = req.query;
+      
+      const result = await fileService.getFileList(
+        parseInt(limit),
+        parseInt(offset)
+      );
+  
+      res.json({
+        success: true,
+        data: {
+          files: result.files,
+          pagination: {
+            total: result.total,
+            limit: result.limit,
+            offset: result.offset
+          }
+        },
+        requestId: result.requestId
+      });
+  
+    } catch (error) {
+      const statusCode = error.message.includes('失败') ? 400 : 500;
+      res.status(statusCode).json({
+        success: false,
+        error: error.message,
+        details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      });
+    }
+  },
 };
 

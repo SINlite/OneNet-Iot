@@ -43,3 +43,5 @@
 {"error":{},"level":"error","message":"获取设备列表失败","timestamp":"2025-03-31T12:36:31.765Z"}
 {"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T13:15:42.442Z"}
 {"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T13:15:42.492Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T14:03:28.984Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T14:03:29.048Z"}

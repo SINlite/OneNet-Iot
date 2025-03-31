@@ -97,5 +97,45 @@ module.exports = {
       throw error;
     }
   },
+  /**
+   * 获取文件列表
+   * @param {number} [limit=10] - 每页数量
+   * @param {number} [offset=0] - 偏移量
+   * @returns {Promise<{files: Array, total: number}>} 文件列表
+   */
+  async getFileList(limit = 10, offset = 0) {
+    try {
+      const response = await axios.get('https://iot-api.heclouds.com/device/file-list', {
+        params: { limit, offset },
+        headers: { Authorization: generateAuthorization() }
+      });
+  
+      if (response.data.code !== 0) {
+        throw new Error(`获取失败: ${response.data.msg}`);
+      }
+  
+      // 按文档要求只返回必要字段
+      const files = response.data.data.list.map(file => ({
+        fid: file.fid,
+        name: file.name,
+        size: file.file_size,
+        createdAt: file.ct
+      }));
+  
+      return {
+        files,
+        total: response.data.data.meta.total,
+        limit: response.data.data.meta.limit,
+        offset: response.data.data.meta.offset,
+        requestId: response.data.request_id
+      };
+    } catch (error) {
+      logger.error('获取文件列表失败', {
+        params: { limit, offset },
+        error: error.response?.data || error.message
+      });
+      throw error;
+    }
+  },
 };
 
