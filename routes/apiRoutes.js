@@ -12,7 +12,7 @@ router.get('/devices', deviceController.getDeviceList);
 router.get('/files/space', fileController.getAccountFileSpace);
 router.get('/files/count', fileController.getDeviceFileCount);
 router.get('/files/download', fileController.downloadFile);
-
+router.post('/files/delete', fileController.deleteFile); // 新增删除路由
 // 健康检查
 router.get('/health', (req, res) => {
   res.json({ 

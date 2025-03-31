@@ -31,13 +31,14 @@ module.exports = {
       limit: response.data.data.upper_limit,
       count: response.data.data.files_total
     };
-  }
+  },
+
   /**
    * 下载设备文件
    * @param {string} fileId - 文件ID
    * @returns {Promise<Stream>} 文件流
    */
-  async function downloadDeviceFile(fileId) {
+  async downloadDeviceFile(fileId) {
     if (!fileId) throw new Error('文件ID不能为空');
   
     try {
@@ -59,6 +60,42 @@ module.exports = {
       });
       throw error;
     }
-  }
+  },
+  /**
+   * 删除设备文件
+   * @param {string} fileId - 文件ID
+   * @returns {Promise<{code: number, msg: string}>} 删除结果
+   */
+  async deleteDeviceFile(fileId) {
+    if (!fileId) throw new Error('文件ID不能为空');
+  
+    try {
+      const response = await axios.post(
+        'https://iot-api.heclouds.com/device/file-delete',
+        { fid: fileId },
+        {
+          headers: { 
+            Authorization: generateAuthorization(),
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+  
+      if (response.data.code !== 0) {
+        throw new Error(`删除失败: ${response.data.msg}`);
+      }
+  
+      return {
+        success: true,
+        requestId: response.data.request_id
+      };
+    } catch (error) {
+      logger.error('文件删除失败', {
+        fileId,
+        error: error.response?.data || error.message
+      });
+      throw error;
+    }
+  },
 };
 
