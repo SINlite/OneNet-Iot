@@ -1,0 +1,6 @@
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T06:48:11.665Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T06:48:11.672Z"}
+{"error":{},"level":"error","message":"MongoDB连接失败","timestamp":"2025-03-31T06:48:11.673Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T06:48:30.759Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T06:48:30.766Z"}
+{"error":{},"level":"error","message":"MongoDB连接失败","timestamp":"2025-03-31T06:48:30.767Z"}
