@@ -4,3 +4,35 @@
 {"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T06:48:30.759Z"}
 {"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T06:48:30.766Z"}
 {"error":{},"level":"error","message":"MongoDB连接失败","timestamp":"2025-03-31T06:48:30.767Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T11:59:10.502Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T11:59:10.507Z"}
+{"error":{},"level":"error","message":"MongoDB连接失败","timestamp":"2025-03-31T11:59:10.508Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T11:59:49.680Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T11:59:49.687Z"}
+{"error":{},"level":"error","message":"MongoDB连接失败","timestamp":"2025-03-31T11:59:49.688Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:04:57.659Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:04:57.665Z"}
+{"error":"Cannot read properties of undefined (reading 'INTERVAL_MINUTES')","level":"error","message":"MongoDB连接失败","timestamp":"2025-03-31T12:04:57.666Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:12:50.873Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:12:50.927Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:12:52.439Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:12:52.490Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:12:54.036Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:12:54.089Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:12:55.671Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:12:55.732Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:12:57.559Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:12:57.625Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:13:00.225Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:13:00.277Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:13:04.551Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:13:04.606Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:20:35.741Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:20:37.397Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:20:38.937Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:20:40.590Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:20:42.603Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:21:22.882Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:21:22.935Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-03-31T12:21:37.464Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-03-31T12:21:37.515Z"}
