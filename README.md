@@ -1,5 +1,5 @@
-```markdown
 # IoT Platform API 项目结构
+```markdown
   project/
   ├── config/               # 配置文件目录
   │   └── constants.js      # 系统常量配置（API密钥、数据库连接等）
