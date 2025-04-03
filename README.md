@@ -1,30 +1,33 @@
 # IoT Platform API 项目结构
 ```markdown
-  project/
-  ├── config/               # 配置文件目录
-  │   └── constants.js      # 系统常量配置（API密钥、数据库连接等）
-  ├── controllers/          # 控制器层
-  │   ├── deviceController.js # 设备相关API控制器
-  │   └── fileController.js   # 文件管理API控制器
-  ├── services/             # 业务逻辑层
-  │   ├── deviceService.js    # 设备相关服务
-  │   └── fileService.js      # 文件管理服务
-  ├── models/               # 数据模型
-  │   └── DeviceProperty.js   # 设备属性MongoDB模型
-  ├── jobs/                 # 后台任务
-  │   └── deviceSyncJob.js    # 设备数据同步定时任务
-  ├── utils/                # 工具类
-  │   ├── authUtil.js         # 认证工具
-  │   └── logger.js           # 日志工具
-  ├── routes/               # 路由配置
-  │   └── apiRoutes.js        # API路由定义
-  ├── logs/                 # 日志目录（自动生成）
-  │   ├── error.log           # 错误日志
-  │   └── combined.log        # 综合日志
-  ├── .gitignore           # Git忽略配置
-  ├── package.json         # 项目依赖配置
-  ├── README.md           # 项目说明文档
-  └── app.js              # 应用入口文件
+	project/
+├── config/
+│   └── constants.js              # 配置文件（含PREDICTION_SERVICE_URL）
+├── controllers/
+│   ├── deviceController.js       # 设备相关控制器
+│   ├── fileController.js         # 文件相关控制器
+│   └── predictionController.js   # 预测控制器（无参数验证逻辑）
+├── services/
+│   ├── deviceService.js          # 设备服务
+│   ├── fileService.js            # 文件服务
+│   └── predictionService.js      # 预测服务（直接转发请求）
+├── models/
+│   └── DeviceProperty.js         # 设备属性模型
+├── jobs/
+│   └── deviceSyncJob.js          # 设备数据同步任务
+├── routes/
+│   └── apiRoutes.js              # 路由配置（无验证中间件）
+├── utils/
+│   ├── authUtil.js               # 认证工具
+│   └── logger.js                 # 日志工具
+├── tests/
+│   ├── device.test.js            # 设备测试
+│   ├── file.test.js              # 文件测试
+│   └── prediction.test.js        # 预测测试（更新后）
+├── docs/
+│   └── swagger.js                # API文档配置
+├── app.js                        # 主入口文件
+└── package.json                  # 项目依赖
 ```
 
 ## 关键文件说明
