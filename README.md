@@ -1,33 +1,32 @@
 # IoT Platform API 项目结构
 ```markdown
 	project/
-├── config/
-│   └── constants.js              # 配置文件（含PREDICTION_SERVICE_URL）
-├── controllers/
-│   ├── deviceController.js       # 设备相关控制器
-│   ├── fileController.js         # 文件相关控制器
-│   └── predictionController.js   # 预测控制器（无参数验证逻辑）
-├── services/
-│   ├── deviceService.js          # 设备服务
-│   ├── fileService.js            # 文件服务
-│   └── predictionService.js      # 预测服务（直接转发请求）
-├── models/
-│   └── DeviceProperty.js         # 设备属性模型
-├── jobs/
-│   └── deviceSyncJob.js          # 设备数据同步任务
-├── routes/
-│   └── apiRoutes.js              # 路由配置（无验证中间件）
-├── utils/
-│   ├── authUtil.js               # 认证工具
-│   └── logger.js                 # 日志工具
-├── tests/
-│   ├── device.test.js            # 设备测试
-│   ├── file.test.js              # 文件测试
-│   └── prediction.test.js        # 预测测试（更新后）
-├── docs/
-│   └── swagger.js                # API文档配置
-├── app.js                        # 主入口文件
-└── package.json                  # 项目依赖
+	├── config/
+	│   └── constants.js              # 配置文件（含PREDICTION_SERVICE_URL）
+	├── controllers/
+	│   ├── deviceController.js       # 设备相关控制器
+	│   ├── fileController.js         # 文件相关控制器
+	│   ├── pestDetectionController.js# 病害识别控制器
+	│   └── predictionController.js   # 产量预测控制器
+
+	├── services/
+	│   ├── deviceService.js          # 设备服务
+	│   ├── fileService.js            # 文件服务
+	│   ├── pestDetectionService.js   # 病害识别服务
+	│   └── predictionService.js      # 产量预测服务
+	├── models/
+	│   └── DeviceProperty.js         # 设备属性模型
+	├── jobs/
+	│   └── deviceSyncJob.js          # 设备数据同步任务
+	├── routes/
+	│   └── apiRoutes.js              # 路由配置
+	├── utils/
+	│   ├── authUtil.js               # 认证工具
+	│   └── logger.js                 # 日志工具
+	├── docs/
+	│   └── swagger.js                # API文档配置
+	├── app.js                        # 主入口文件
+	└── package.json                  # 项目依赖
 ```
 
 ## 关键文件说明
@@ -49,7 +48,11 @@ GET    /api/files/count        # 查询设备文件数量
 GET    /api/health             # 服务健康检查
 GET    /api/files              # 文件列表
 GET    /api/files/download     # 文件下载
-POST    /api/files/delete      # 文件删除
+POST   /api/files/delete       # 文件删除
+POST   /api/predict            # 产量预测
+GET    /api/ideal-values       # 特征理想值查询
+POST   /api/disease_detection  # 上传照片进行病虫害识别
+GET    /api/latest_detection   # 对最新的照片进行病虫害识别
 ```
 
 ### 3. 配置示例 (`config/constants.js`)
