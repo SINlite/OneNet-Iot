@@ -25,7 +25,8 @@ app.use((err, req, res, next) => {
   });
   res.status(500).json({ error: '内部服务器错误' });
 });
-
+// 启动设备同步定时任务
+const syncJob = startSyncJob();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
