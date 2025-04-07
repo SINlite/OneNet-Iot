@@ -58,11 +58,16 @@ module.exports = {
   /**
    * 获取设备列表
    */
-  async getDeviceList(productId, offset = 0, limit = 10) {
+  async getDeviceList(productId = PRODUCT_ID, offset = 0, limit = 10) {
     const response = await axios.get('https://iot-api.heclouds.com/device/list', {
       params: { product_id: productId, offset, limit },
       headers: { Authorization: generateAuthorization() }
     });
+
+    if (!response.data.data ||!response.data.data.list) {
+      logger.error('获取设备列表失败，返回数据中没有 list 字段', { response: response.data });
+      return [];
+    }
 
     return response.data.data.list.map(device => ({
       name: device.name,
