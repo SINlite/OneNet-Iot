@@ -109,9 +109,10 @@ module.exports = {
       });
     }
   },
+  //获取文件列表
   getFileList : async (req, res) => {
     try {
-      const { limit = 10, offset = 0 } = req.query;
+      const { limit , offset } = req.query;
       
       const result = await fileService.getFileList(
         parseInt(limit),

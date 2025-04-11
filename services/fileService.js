@@ -1,5 +1,6 @@
 const axios = require('axios');
 const { generateAuthorization } = require('../utils/authUtil');
+const { PRODUCT_ID, DEVICE_NAME } = require('../config/constants');
 const logger = require('../utils/logger');
 
 module.exports = {
@@ -21,7 +22,7 @@ module.exports = {
   /**
    * 查询设备文件数量
    */
-  async getDeviceFileCount(productId, deviceName) {
+  async getDeviceFileCount(productId=PRODUCT_ID, deviceName=DEVICE_NAME) {
     const response = await axios.get('https://iot-api.heclouds.com/device/file-device-count', {
       params: { product_id: productId, device_name: deviceName },
       headers: { Authorization: generateAuthorization() }
