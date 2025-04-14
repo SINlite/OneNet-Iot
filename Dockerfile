@@ -17,8 +17,8 @@ RUN npm install \
     mqtt@5.10.4 \
     node-cron@3.0.3 \
     node-schedule@2.1.1 \
-    winston@3.17.0
-
+    winston@3.17.0 \
+    multer
 # 复制应用程序源代码
 COPY . .
 

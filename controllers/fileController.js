@@ -1,5 +1,20 @@
 const fileService = require('../services/fileService');
 const logger = require('../utils/logger');
+const { FileInfo } = require('../models/DeviceProperty');
+
+const multer = require('multer');
+const path = require('path');
+// 配置 multer 存储引擎
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '/usr/src/image');
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({ storage: storage });
 
 module.exports = {
   /**
@@ -49,24 +64,34 @@ module.exports = {
           error: '缺少必要参数: fid'
         });
       }
-  
+
+      // 检查 fid 是否存在于数据库中
+      const fileInfo = await FileInfo.findOne({ fid });
+      if (!fileInfo) {
+        return res.status(404).json({
+          success: false,
+          error: '文件不存在'
+        });
+      }
+
+      const fileName = `${fileInfo.name}.jpg`; // 从数据库获取文件名并添加 .jpg 后缀
       const fileStream = await fileService.downloadDeviceFile(fid);
-  
+
       // 设置响应头
       res.set({
         'Content-Type': 'application/octet-stream',
-        'Content-Disposition': `attachment; filename=${fid}.bin` // 可根据实际需求调整文件名
+        'Content-Disposition': `attachment; filename=${fileName}`
       });
-  
+
       // 管道传输流
       fileStream.pipe(res);
-  
+
     } catch (error) {
       logger.error('文件下载控制器错误', {
         params: req.query,
         error: error.stack
       });
-  
+
       res.status(500).json({
         success: false,
         error: '文件下载失败: ' + error.message
@@ -141,5 +166,50 @@ module.exports = {
       });
     }
   },
+   /**
+     * 上传文件
+     */
+    uploadFile: async (req, res) => {
+        try {
+            upload.single('image')(req, res, async function (err) {
+                if (err) {
+                    logger.error('文件上传失败', { error: err.message });
+                    return res.status(500).json({
+                        success: false,
+                        error: '文件上传失败: ' + err.message
+                    });
+                }
+
+                if (!req.file) {
+                    return res.status(400).json({
+                        success: false,
+                        error: '未提供文件'
+                    });
+                }
+
+                // 可以在这里添加将文件信息保存到数据库的逻辑
+                const fileInfo = {
+                    name: req.file.filename,
+                    path: req.file.path,
+                    size: req.file.size
+                };
+
+                res.json({
+                    success: true,
+                    data: fileInfo,
+                    message: '文件上传成功'
+                });
+            });
+        } catch (error) {
+            logger.error('文件上传控制器错误', {
+                error: error.stack
+            });
+            res.status(500).json({
+                success: false,
+                error: '文件上传失败: ' + error.message
+            });
+        }
+    },
+  
 };
 

@@ -456,3 +456,119 @@
 {"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T09:00:05.363Z"}
 {"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T09:00:11.523Z"}
 {"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T09:00:11.551Z"}
+{"error":{},"level":"error","message":"获取设备列表失败","timestamp":"2025-04-14T09:02:59.811Z"}
+{"error":{},"level":"error","message":"获取设备列表失败","timestamp":"2025-04-14T09:03:01.249Z"}
+{"error":{},"level":"error","message":"获取设备列表失败","timestamp":"2025-04-14T09:03:02.262Z"}
+{"error":{},"level":"error","message":"获取设备列表失败","timestamp":"2025-04-14T09:03:22.591Z"}
+{"error":{},"level":"error","message":"获取设备列表失败","timestamp":"2025-04-14T09:03:23.616Z"}
+{"error":{},"level":"error","message":"获取设备列表失败","timestamp":"2025-04-14T09:03:24.638Z"}
+{"error":{},"level":"error","message":"获取设备列表失败","timestamp":"2025-04-14T09:03:36.056Z"}
+{"error":{},"level":"error","message":"获取设备列表失败","timestamp":"2025-04-14T09:04:21.173Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T09:10:53.205Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T09:10:53.236Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T09:13:36.078Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T09:13:36.105Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T09:17:30.740Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T09:17:30.768Z"}
+{"error":{"kind":"date","message":"Cast to date failed for value \"Invalid Date\" (type Date) at path \"timestamp\" for model \"DevicePropertyHistory\"","name":"CastError","path":"timestamp","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"Invalid Date\"","value":null,"valueType":"Date"},"level":"error","message":"从数据库获取设备历史属性失败","timestamp":"2025-04-14T09:17:36.991Z"}
+{"error":{"kind":"date","message":"Cast to date failed for value \"Invalid Date\" (type Date) at path \"timestamp\" for model \"DevicePropertyHistory\"","name":"CastError","path":"timestamp","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"Invalid Date\"","value":null,"valueType":"Date"},"level":"error","message":"查询历史记录失败","params":{"end_time":"1743830154000","identifier":"airHumi","start_time":"1743570954000"},"timestamp":"2025-04-14T09:17:36.992Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T09:20:00.376Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T09:20:04.816Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T09:20:04.816Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T09:25:13.549Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T09:25:13.575Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T09:30:00.883Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T09:30:16.467Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T09:30:16.467Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T09:34:37.219Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T09:34:46.443Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T09:34:57.122Z"}
+{"error":"getaddrinfo ENOTFOUND mongo","level":"error","message":"MongoDB连接失败","timestamp":"2025-04-14T09:35:27.790Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T09:49:05.254Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T09:49:05.795Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T09:50:00.781Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T09:50:06.730Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T09:50:06.731Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T10:00:00.326Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T10:00:10.405Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T10:00:10.406Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T10:10:00.143Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T10:10:12.728Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T10:10:12.728Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T10:20:00.558Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T10:20:09.246Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T10:20:09.246Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T10:30:00.419Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T10:30:05.598Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T10:30:05.598Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T10:40:00.823Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T10:40:07.043Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T10:40:07.044Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T10:50:00.698Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T10:50:04.441Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T10:50:04.441Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T10:56:35.233Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T10:56:35.270Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T10:57:59.553Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T10:57:59.584Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T10:58:00.553Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T10:58:03.494Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T10:58:03.495Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T10:59:00.816Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T10:59:04.033Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T10:59:04.033Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T10:59:43.955Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T10:59:43.982Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T11:00:00.875Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"开始文件列表同步任务","timestamp":"2025-04-14T11:00:00.902Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414183812.jpg (fid: qnPvklWGzGNP2A1oSwgT) 已保存到数据库","timestamp":"2025-04-14T11:00:02.435Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414180751.jpg (fid: ZCobv0nHISfrrkN0xc6a) 已保存到数据库","timestamp":"2025-04-14T11:00:02.440Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414180323.jpg (fid: AVPMjlGnsxjnelPHmMsC) 已保存到数据库","timestamp":"2025-04-14T11:00:02.444Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414175805.jpg (fid: XnJol28qE2mwe7A53EwW) 已保存到数据库","timestamp":"2025-04-14T11:00:02.447Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414175612.jpg (fid: MUvTKuo4urtE7zA6g9XC) 已保存到数据库","timestamp":"2025-04-14T11:00:02.451Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250403181158.jpg (fid: UI9PhbyOiwBrtfsw84bi) 已保存到数据库","timestamp":"2025-04-14T11:00:02.455Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250403174149.jpg (fid: 9gNfJy58tiXricK0Kuzu) 已保存到数据库","timestamp":"2025-04-14T11:00:02.459Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件列表同步成功","timestamp":"2025-04-14T11:00:02.460Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T11:00:08.385Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T11:00:08.386Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T11:01:00.593Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"开始文件列表同步任务","timestamp":"2025-04-14T11:01:00.597Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414183812.jpg (fid: qnPvklWGzGNP2A1oSwgT) 已存在于数据库，跳过保存","timestamp":"2025-04-14T11:01:01.188Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414180751.jpg (fid: ZCobv0nHISfrrkN0xc6a) 已存在于数据库，跳过保存","timestamp":"2025-04-14T11:01:01.190Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414180323.jpg (fid: AVPMjlGnsxjnelPHmMsC) 已存在于数据库，跳过保存","timestamp":"2025-04-14T11:01:01.191Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414175805.jpg (fid: XnJol28qE2mwe7A53EwW) 已存在于数据库，跳过保存","timestamp":"2025-04-14T11:01:01.193Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250414175612.jpg (fid: MUvTKuo4urtE7zA6g9XC) 已存在于数据库，跳过保存","timestamp":"2025-04-14T11:01:01.195Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250403181158.jpg (fid: UI9PhbyOiwBrtfsw84bi) 已存在于数据库，跳过保存","timestamp":"2025-04-14T11:01:01.197Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件 20250403174149.jpg (fid: 9gNfJy58tiXricK0Kuzu) 已存在于数据库，跳过保存","timestamp":"2025-04-14T11:01:01.201Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件列表同步成功","timestamp":"2025-04-14T11:01:01.201Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T11:01:04.616Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T11:01:04.616Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:01:57.896Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:01:57.926Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T11:10:00.801Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"开始文件列表同步任务","timestamp":"2025-04-14T11:10:00.804Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件列表同步成功","timestamp":"2025-04-14T11:10:01.327Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T11:10:08.126Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T11:10:08.127Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:13:15.414Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:13:15.439Z"}
+{"error":"ReferenceError: FileInfo is not defined\n    at downloadFile (/usr/src/app/controllers/fileController.js:54:24)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/usr/src/app/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/usr/src/app/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at /usr/src/app/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/usr/src/app/node_modules/express/lib/router/index.js:346:12)\n    at next (/usr/src/app/node_modules/express/lib/router/index.js:280:10)\n    at Function.handle (/usr/src/app/node_modules/express/lib/router/index.js:175:3)\n    at router (/usr/src/app/node_modules/express/lib/router/index.js:47:12)","level":"error","message":"文件下载控制器错误","params":{"fid":"qnPvklWGzGNP2A1oSwgT"},"timestamp":"2025-04-14T11:13:26.823Z"}
+{"error":"ReferenceError: FileInfo is not defined\n    at downloadFile (/usr/src/app/controllers/fileController.js:54:24)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/usr/src/app/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/usr/src/app/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at /usr/src/app/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/usr/src/app/node_modules/express/lib/router/index.js:346:12)\n    at next (/usr/src/app/node_modules/express/lib/router/index.js:280:10)\n    at Function.handle (/usr/src/app/node_modules/express/lib/router/index.js:175:3)\n    at router (/usr/src/app/node_modules/express/lib/router/index.js:47:12)","level":"error","message":"文件下载控制器错误","params":{"fid":"ZCobv0nHISfrrkN0xc6a"},"timestamp":"2025-04-14T11:14:02.977Z"}
+{"error":"ReferenceError: FileInfo is not defined\n    at downloadFile (/usr/src/app/controllers/fileController.js:54:24)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/usr/src/app/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/usr/src/app/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at /usr/src/app/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/usr/src/app/node_modules/express/lib/router/index.js:346:12)\n    at next (/usr/src/app/node_modules/express/lib/router/index.js:280:10)\n    at Function.handle (/usr/src/app/node_modules/express/lib/router/index.js:175:3)\n    at router (/usr/src/app/node_modules/express/lib/router/index.js:47:12)","level":"error","message":"文件下载控制器错误","params":{"fid":"ZCobv0nHISfrrkN0xc6a"},"timestamp":"2025-04-14T11:14:04.224Z"}
+{"error":"ReferenceError: FileInfo is not defined\n    at downloadFile (/usr/src/app/controllers/fileController.js:54:24)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/usr/src/app/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/usr/src/app/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at /usr/src/app/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/usr/src/app/node_modules/express/lib/router/index.js:346:12)\n    at next (/usr/src/app/node_modules/express/lib/router/index.js:280:10)\n    at Function.handle (/usr/src/app/node_modules/express/lib/router/index.js:175:3)\n    at router (/usr/src/app/node_modules/express/lib/router/index.js:47:12)","level":"error","message":"文件下载控制器错误","params":{"fid":"ZCobv0nHISfrrkN0xc6a"},"timestamp":"2025-04-14T11:14:05.893Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:15:32.773Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:15:32.798Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:16:38.397Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:16:38.425Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T11:20:00.542Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"开始文件列表同步任务","timestamp":"2025-04-14T11:20:00.546Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件列表同步成功","timestamp":"2025-04-14T11:20:01.321Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T11:20:10.638Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T11:20:10.639Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:23:48.575Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:23:49.116Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:30:20.057Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:30:20.593Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:34:29.644Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:34:29.670Z"}
+{"error":"Unexpected field","level":"error","message":"文件上传失败","timestamp":"2025-04-14T11:35:00.370Z"}

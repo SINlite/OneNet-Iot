@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { MONGO_URI } = require('./config/constants');
 const apiRoutes = require('./routes/apiRoutes');
-const { startSyncJob } = require('./jobs/deviceSyncJob');
+const { startSyncJob, startFileListSyncJob } = require('./jobs/deviceSyncJob');
 const logger = require('./utils/logger');
 const app = express();
 
@@ -27,7 +27,8 @@ app.use((err, req, res, next) => {
 });
 // 启动设备同步定时任务
 const syncJob = startSyncJob();
-
+// 启动文件列表同步定时任务
+const fileListSyncJob = startFileListSyncJob();
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   logger.info(`服务已启动，端口: ${PORT}`);

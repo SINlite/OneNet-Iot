@@ -24,12 +24,20 @@ const deviceCurrentPropertySchema = new mongoose.Schema({
   value: mongoose.Mixed,
   timestamp: Date
 });
+// 文件信息表的 Schema
+const fileInfoSchema = new mongoose.Schema({
+  fid: { type: String, unique: true },
+  name: String,
+  size: Number,
+  createdAt: Date
+});
 
 // 导出模型
 const DevicePropertyHistory = mongoose.model('DevicePropertyHistory', devicePropertyHistorySchema);
 const DeviceCurrentProperty = mongoose.model('DeviceCurrentProperty', deviceCurrentPropertySchema);
-
+const FileInfo = mongoose.model('FileInfo', fileInfoSchema);
 module.exports = {
   DevicePropertyHistory,
-  DeviceCurrentProperty
+  DeviceCurrentProperty,
+  FileInfo
 };

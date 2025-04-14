@@ -15,6 +15,7 @@ router.get('/files/count', fileController.getDeviceFileCount);
 router.get('/files/download', fileController.downloadFile);
 router.get('/files', fileController.getFileList); // 新增文件列表路由
 router.post('/files/delete', fileController.deleteFile); // 新增删除路由
+router.post('/files/upload', fileController.uploadFile); // 新增文件上传路由
 
 // 预测相关路由
 router.post('/predict', predictionController.predictYield);

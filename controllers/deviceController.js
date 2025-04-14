@@ -8,8 +8,6 @@ module.exports = {
   getDeviceProperties: async (req, res) => {
     try {
       const { product_id, device_name } = req.query;
-      console.log('control Received product_id:', product_id);
-      console.log('control Received device_name:', device_name);
       const data = await deviceService.getDevicePropertiesFromDB(product_id, device_name);
       res.json({ success: true, data });
     } catch (error) {
@@ -27,7 +25,7 @@ module.exports = {
   getDevicePropertyHistory: async (req, res) => {
     try {
       const params = req.query;
-      const data = await deviceService.getDevicePropertyHistory(params);
+      const data = await deviceService.getDevicePropertyHistoryFromDB(params);
       res.json({ success: true, data });
     } catch (error) {
       logger.error('查询历史记录失败', { 

@@ -98,12 +98,9 @@ async function syncDeviceProperties() {
 }
 
 // 从数据库中查询设备属性
-async function getDevicePropertiesFromDB(product_id, device_name) {
+async function getDevicePropertiesFromDB(product_id = PRODUCT_ID, device_name) {
   try {
     const properties = await DeviceCurrentProperty.find({ product_id, device_name });
-    console.log('service Received product_id:', product_id);
-    console.log('service Received device_name:', device_name);
-    console.log('service Received device_name:', properties);
     return properties.map(property => ({
       identifier: property.identifier,
       value: property.value,
@@ -114,10 +111,83 @@ async function getDevicePropertiesFromDB(product_id, device_name) {
     throw error;
   }
 }
+/**
+ * 获取设备列表
+ */
+  async function  getDeviceList(productId = PRODUCT_ID, offset = 0, limit = 10) {
+    const response = await axios.get('https://iot-api.heclouds.com/device/list', {
+      params: { product_id: productId, offset, limit },
+      headers: { Authorization: generateAuthorization() }
+    });
+
+    if (!response.data.data ||!response.data.data.list) {
+      logger.error('获取设备列表失败，返回数据中没有 list 字段', { response: response.data });
+      return [];
+    }
+
+    return response.data.data.list.map(device => ({
+      name: device.name,
+      status: device.status,
+      lastActive: device.last_time
+    }));
+  }
+
+// 从数据库中查询设备历史属性
+async function getDevicePropertyHistoryFromDB({
+  product_id = PRODUCT_ID,
+  device_name = DEVICE_NAME,
+  identifier,
+  start_time = Date.now() - 7 * 86400000,
+  end_time = Date.now(),
+  limit = 30 // 添加 limit 参数，默认值为 30
+}) {
+  try {
+    if (!identifier) throw new Error('缺少identifier参数');
+
+    // 验证并转换 start_time
+    const startTime = new Date(start_time);
+    if (isNaN(startTime.getTime())) {
+      start_time = new Date(Date.now() - 7 * 86400000);
+    } else {
+      start_time = startTime;
+    }
+
+    // 验证并转换 end_time
+    const endTime = new Date(end_time);
+    if (isNaN(endTime.getTime())) {
+      end_time = new Date();
+    } else {
+      end_time = endTime;
+    }
+
+    const query = DevicePropertyHistory.find({
+      product_id,
+      device_name,
+      identifier,
+      timestamp: { $gte: start_time, $lte: end_time }
+    });
+
+    // 应用 limit 限制
+    const records = await query.limit(limit);
+
+    return {
+      total: records.length,
+      list: records.map(record => ({
+        value: record.value,
+        time: record.timestamp
+      }))
+    };
+  } catch (error) {
+    logger.error('从数据库获取设备历史属性失败', { error });
+    throw error;
+  }
+}
 
 module.exports = { 
   getDeviceProperties,
   getDevicePropertyHistory,
   syncDeviceProperties,
-  getDevicePropertiesFromDB
+  getDevicePropertiesFromDB,
+  getDeviceList,
+  getDevicePropertyHistoryFromDB
 };
