@@ -8,7 +8,9 @@ module.exports = {
   getDeviceProperties: async (req, res) => {
     try {
       const { product_id, device_name } = req.query;
-      const data = await deviceService.getDeviceProperties(product_id, device_name);
+      console.log('control Received product_id:', product_id);
+      console.log('control Received device_name:', device_name);
+      const data = await deviceService.getDevicePropertiesFromDB(product_id, device_name);
       res.json({ success: true, data });
     } catch (error) {
       logger.error('获取设备属性失败', { error });

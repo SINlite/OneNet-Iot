@@ -1,5 +1,4 @@
 // models/DeviceProperty.js
-//
 const mongoose = require('mongoose');
 const { MONGO_URI } = require('../config/constants');
 const logger = require('../utils/logger');
@@ -8,10 +7,29 @@ mongoose.connect(MONGO_URI)
   .then(() => logger.info('MongoDB连接成功'))
   .catch(err => logger.error('MongoDB连接失败', { error: err.message }));
 
-const devicePropertySchema = new mongoose.Schema({
+// 设备属性历史表的 Schema
+const devicePropertyHistorySchema = new mongoose.Schema({
+  product_id: String,
+  device_name: String,
   identifier: String,
   value: mongoose.Mixed,
   timestamp: Date
 });
 
-module.exports = mongoose.model('DeviceProperty', devicePropertySchema);
+// 设备当前属性表的 Schema
+const deviceCurrentPropertySchema = new mongoose.Schema({
+  product_id: String,
+  device_name: String,
+  identifier: String,
+  value: mongoose.Mixed,
+  timestamp: Date
+});
+
+// 导出模型
+const DevicePropertyHistory = mongoose.model('DevicePropertyHistory', devicePropertyHistorySchema);
+const DeviceCurrentProperty = mongoose.model('DeviceCurrentProperty', deviceCurrentPropertySchema);
+
+module.exports = {
+  DevicePropertyHistory,
+  DeviceCurrentProperty
+};

@@ -16,17 +16,14 @@ function startSyncJob() {
     logger.info('开始设备属性同步任务', { context: 'SYNC_JOB' });
     
     try {
-      const result = await syncDeviceProperties(PRODUCT_ID, DEVICE_NAME);
+      await syncDeviceProperties();
       
       lastSyncStatus = {
         lastSuccess: new Date(),
         lastError: null
       };
       
-      logger.info(`同步成功，保存 ${result.savedCount} 条记录`, {
-        context: 'SYNC_JOB',
-        nextSync: result.nextSync
-      });
+      logger.info('同步成功', { context: 'SYNC_JOB' });
       
     } catch (error) {
       lastSyncStatus = {
