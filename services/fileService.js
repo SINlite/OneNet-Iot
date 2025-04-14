@@ -2,8 +2,25 @@ const axios = require('axios');
 const { generateAuthorization } = require('../utils/authUtil');
 const { PRODUCT_ID, DEVICE_NAME } = require('../config/constants');
 const logger = require('../utils/logger');
+const { FileInfo } = require('../models/DeviceProperty');
 
 module.exports = {
+  /**
+   * 查询最新文件的 fid
+   * @returns {Promise<string>} 最新文件的 fid
+   */
+  async getLatestFileFid() {
+    try {
+      const latestFile = await FileInfo.findOne().sort({ createdAt: -1 }).exec();
+      if (!latestFile) {
+        throw new Error('未找到最新文件');
+      }
+      return latestFile.fid;
+    } catch (error) {
+      logger.error('查询最新文件失败', { error: error.message });
+      throw error;
+    }
+  },
   /**
    * 获取存储空间信息
    */

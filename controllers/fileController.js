@@ -18,6 +18,42 @@ const upload = multer({ storage: storage });
 
 module.exports = {
   /**
+   * 下载最新文件
+   */
+  downloadLatestFile: async (req, res) => {
+    try {
+      const fid = await fileService.getLatestFileFid();
+      const fileInfo = await FileInfo.findOne({ fid });
+      if (!fileInfo) {
+        return res.status(404).json({
+          success: false,
+          error: '文件不存在'
+        });
+      }
+
+      const fileName = `${fileInfo.name}`;
+      const fileStream = await fileService.downloadDeviceFile(fid);
+
+      // 设置响应头
+      res.set({
+        'Content-Type': 'application/octet-stream',
+        'Content-Disposition': `attachment; filename=${fileName}`
+      });
+
+      // 管道传输流
+      fileStream.pipe(res);
+    } catch (error) {
+      logger.error('下载最新文件控制器错误', {
+        error: error.stack
+      });
+
+      res.status(500).json({
+        success: false,
+        error: '下载最新文件失败: ' + error.message
+      });
+    }
+  },
+  /**
    * 获取存储空间信息
    */
   getAccountFileSpace: async (req, res) => {

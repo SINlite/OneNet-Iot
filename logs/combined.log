@@ -572,3 +572,14 @@
 {"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:34:29.644Z"}
 {"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:34:29.670Z"}
 {"error":"Unexpected field","level":"error","message":"文件上传失败","timestamp":"2025-04-14T11:35:00.370Z"}
+{"context":"SYNC_JOB","level":"info","message":"开始设备属性同步任务","timestamp":"2025-04-14T11:40:00.624Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"开始文件列表同步任务","timestamp":"2025-04-14T11:40:00.656Z"}
+{"context":"FILE_LIST_SYNC_JOB","level":"info","message":"文件列表同步成功","timestamp":"2025-04-14T11:40:03.252Z"}
+{"level":"info","message":"同步成功: 4 条记录","timestamp":"2025-04-14T11:40:08.798Z"}
+{"context":"SYNC_JOB","level":"info","message":"同步成功","timestamp":"2025-04-14T11:40:08.799Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:47:06.909Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:47:06.936Z"}
+{"error":"FileInfo is not defined","level":"error","message":"查询最新文件失败","timestamp":"2025-04-14T11:47:21.283Z"}
+{"error":"ReferenceError: FileInfo is not defined\n    at Object.getLatestFileFid (/usr/src/app/services/fileService.js:13:26)\n    at downloadLatestFile (/usr/src/app/controllers/fileController.js:25:37)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/usr/src/app/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/usr/src/app/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)\n    at /usr/src/app/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/usr/src/app/node_modules/express/lib/router/index.js:346:12)\n    at next (/usr/src/app/node_modules/express/lib/router/index.js:280:10)\n    at Function.handle (/usr/src/app/node_modules/express/lib/router/index.js:175:3)","level":"error","message":"下载最新文件控制器错误","timestamp":"2025-04-14T11:47:21.284Z"}
+{"level":"info","message":"服务已启动，端口: 3000","timestamp":"2025-04-14T11:47:56.258Z"}
+{"level":"info","message":"MongoDB连接成功","timestamp":"2025-04-14T11:47:56.286Z"}
