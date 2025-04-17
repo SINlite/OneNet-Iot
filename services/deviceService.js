@@ -139,7 +139,9 @@ async function getDevicePropertyHistoryFromDB({
   identifier,
   start_time = Date.now() - 7 * 86400000,
   end_time = Date.now(),
-  limit = 30 // 添加 limit 参数，默认值为 30
+  limit = 30, // 添加 limit 参数，默认值为 30
+  offset = 0, // 添加 offset 参数，默认值为 0
+  sort = '2' // 添加 sort 参数，默认值为 '2'（倒序）
 }) {
   try {
     if (!identifier) throw new Error('缺少identifier参数');
@@ -166,9 +168,19 @@ async function getDevicePropertyHistoryFromDB({
       identifier,
       timestamp: { $gte: start_time, $lte: end_time }
     });
+    
+    // 应用排序
+    const sortOrder = sort === '1' ? 1 : -1;
+    query.sort({ timestamp: sortOrder });
 
+    // 应用偏移量
+    query.skip(offset);
+    
     // 应用 limit 限制
-    const records = await query.limit(limit);
+    query.limit(limit);
+    
+    // 应用 limit 限制
+    const records = await query;
 
     return {
       total: records.length,

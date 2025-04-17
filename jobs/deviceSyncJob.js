@@ -1,5 +1,5 @@
 const { syncDeviceProperties } = require('../services/deviceService');
-const { PRODUCT_ID, DEVICE_NAME, SYNC_CONFIG } = require('../config/constants');
+const { PRODUCT_ID, DEVICE_NAME, FILE_LIST_SYNC_INTERVAL_MINUTES, DEVICE_SYNC_INTERVAL_MINUTES } = require('../config/constants');
 const cron = require('node-cron');
 const logger = require('../utils/logger');
 const fileService = require('../services/fileService');
@@ -12,7 +12,7 @@ let lastSyncStatus = {
 
 function startSyncJob() {
   // 使用配置中的间隔时间
-  const cronExpression = `*/${SYNC_CONFIG.INTERVAL_MINUTES} * * * *`;
+  const cronExpression = `*/${DEVICE_SYNC_INTERVAL_MINUTES} * * * *`;
   
   return cron.schedule(cronExpression, async () => {
     logger.info('开始设备属性同步任务', { context: 'SYNC_JOB' });
@@ -45,7 +45,7 @@ function startSyncJob() {
 }
 // 新增定时获取文件列表并保存到数据库的任务
 function startFileListSyncJob() {
-  const cronExpression = `*/${SYNC_CONFIG.INTERVAL_MINUTES} * * * *`;
+  const cronExpression = `*/${FILE_LIST_SYNC_INTERVAL_MINUTES} * * * *`;
   
   return cron.schedule(cronExpression, async () => {
     logger.info('开始文件列表同步任务', { context: 'FILE_LIST_SYNC_JOB' });

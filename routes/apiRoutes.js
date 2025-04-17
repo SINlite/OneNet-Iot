@@ -4,6 +4,15 @@ const deviceController = require('../controllers/deviceController');
 const fileController = require('../controllers/fileController');
 const predictionController = require('../controllers/predictionController');
 
+const imageController = require('../controllers/ImageController');
+const multer = require('multer');
+const upload = multer();
+
+// 图像识别相关路由
+router.post('/image/upload', upload.single('file'), imageController.uploadFile);
+router.get('/image/detect', imageController.detectImage);
+router.get('/image/detect_live', imageController.detectLive);
+
 // 设备相关路由
 router.get('/devices/properties', deviceController.getDeviceProperties);
 router.get('/devices/history', deviceController.getDevicePropertyHistory);

@@ -5,7 +5,6 @@ module.exports = {
   USER_ID: '389678',
   MONGO_URI: 'mongodb://mgadmin:mgadmin@mongo:27017/properties?authSource=admin',
   PREDICTION_SERVICE_URL: process.env.PREDICTION_SERVICE_URL || 'http://yield_predictor:5000',
-  SYNC_CONFIG: {
-	INTERVAL_MINUTES: 10
-  }
+  FILE_LIST_SYNC_INTERVAL_MINUTES: 30,
+  DEVICE_SYNC_INTERVAL_MINUTES: 30,
 };
