@@ -5,11 +5,10 @@ const fs = require('fs');
 const path = require('path');
 module.exports = {
     // 上传文件
-    // ImageController.js
-uploadFile: async (req, res) => {
+    uploadFile: async (req, res) => {
         try {
             if (!req.file) {
-                return res.status(400).json({ error: 'No file part' });
+                return res.status(400).json({ success: false, error: 'No file part' });
             }
             const file = req.file;
             const tempFilePath = path.join(__dirname, '../temp', file.originalname);
@@ -22,10 +21,10 @@ uploadFile: async (req, res) => {
             // 删除临时文件
             fs.unlinkSync(tempFilePath);
 
-            res.json(result);
+            res.json({ success: true, ...result });
         } catch (error) {
             logger.error('上传文件失败', { error });
-            res.status(500).json({ error: error.message });
+            res.status(500).json({ success: false, error: error.message });
         }
     },
 
@@ -33,10 +32,10 @@ uploadFile: async (req, res) => {
     detectImage: async (req, res) => {
         try {
             const result = await imageService.detectImage();
-            res.json(result);
+            res.json({ success: true, ...result });
         } catch (error) {
             logger.error('检测图像失败', { error });
-            res.status(500).json({ error: error.message });
+            res.status(500).json({ success: false, error: error.message });
         }
     },
 
@@ -44,10 +43,10 @@ uploadFile: async (req, res) => {
     detectLive: async (req, res) => {
         try {
             const result = await imageService.detectLive();
-            res.json(result);
+            res.json({ success: true, ...result });
         } catch (error) {
             logger.error('检测实时视频流失败', { error });
-            res.status(500).json({ error: error.message });
+            res.status(500).json({ success: false, error: error.message });
         }
     }
 };
