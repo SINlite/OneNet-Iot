@@ -6,13 +6,13 @@
 	├── controllers/
 	│   ├── deviceController.js       # 设备相关控制器
 	│   ├── fileController.js         # 文件相关控制器
-	│   ├── pestDetectionController.js# 病害识别控制器
+	│   ├── ImageControllerController.js # 病害识别控制器
 	│   └── predictionController.js   # 产量预测控制器
 
 	├── services/
 	│   ├── deviceService.js          # 设备服务
 	│   ├── fileService.js            # 文件服务
-	│   ├── pestDetectionService.js   # 病害识别服务
+	│   ├── ImageService.js   # 病害识别服务
 	│   └── predictionService.js      # 产量预测服务
 	├── models/
 	│   └── DeviceProperty.js         # 设备属性模型
@@ -51,8 +51,9 @@ GET    /api/files/download     # 文件下载
 POST   /api/files/delete       # 文件删除
 POST   /api/predict            # 产量预测
 GET    /api/ideal-values       # 特征理想值查询
-POST   /api/disease_detection  # 上传照片进行病虫害识别
-GET    /api/latest_detection   # 对最新的照片进行病虫害识别
+POST   /api/image/upload       # 上传照片到模块
+GET    /api/image/detect       # 对最新的照片进行病虫害识别
+GET    /api/image/detect_live  # 对当前直播画面进行病虫害识别
 ```
 
 ### 3. 配置示例 (`config/constants.js`)
